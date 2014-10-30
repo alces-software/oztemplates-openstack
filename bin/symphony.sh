@@ -29,12 +29,11 @@ if [ -z $POOL_PATH ]; then
   . $DIR/../etc/vars
 fi
 
-$DIR/centos7.0.sh centos7.0-symphonybase.xml
 
 BASE_IMAGE=$POOL_PATH/centos7.0-symphonybase.xml
+#Create base image (if not exist)
 if ! [ -f $BASE_IMAGE ]; then 
-  echo "Unable to locate base image xml file" >&2
-  exit 1
+  $DIR/centos7.0.sh centos7.0-symphonybase.xml
 fi
 
 INTERNAL_BRIDGE='build.sfn'
