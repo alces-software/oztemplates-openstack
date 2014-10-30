@@ -33,7 +33,7 @@ fi
 BASE_IMAGE=$POOL_PATH/centos7.0-symphonybase.xml
 #Create base image (if not exist)
 if ! [ -f $BASE_IMAGE ]; then 
-  $DIR/centos7.0.sh centos7.0-symphonybase.xml
+  $DIR/centos7.0.sh centos7.0-symphonybase
 fi
 
 INTERNAL_BRIDGE='build.sfn'
