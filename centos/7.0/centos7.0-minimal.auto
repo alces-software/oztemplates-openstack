@@ -5,7 +5,7 @@ firstboot --disable
 lang en_GB
 skipx
 network --device eth0 --bootproto dhcp
-rootpw A1ce$
+rootpw A1ce$$0ftware
 firewall --disabled
 authconfig --enableshadow --enablemd5
 selinux --disabled

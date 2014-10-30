@@ -24,7 +24,35 @@
 #                                                                              #
 ################################################################################
 
-oz-install -d3 -u alces-director.tdl -x alces-director.xml -p -a alces-symphony.auto -c ../../config/oz.cfg
-oz-install -d3 -u alces-repo.tdl -x alces-repo.xml -p -a alces-symphony.auto -c ../../config/oz.cfg
-oz-install -d3 -u alces-monitor.tdl -x alces-monitor.xml -p -a alces-symphony.auto -c ../../config/oz.cfg
-#virt-sysprep -a /var/lib/libvirt/images/centos7.0-minimal.qcow2
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+#What to call the image in libvirt
+if [ -z $IMAGE_NAME ]; then
+  IMAGE_NAME=centos7.0-minimal
+fi
+
+#Primary disk size in GB
+if [ -z $IMAGE_SIZE ]; then
+  IMAGE_SIZE=8
+fi
+
+#QCOW2 pool path
+if [ -z $POOL_PATH ]; then
+  POOL_PATH=/opt/vm
+fi
+
+#OZ config file
+if [ -z $OZ_CONFIG ]; then
+  echo "OZ_CONFIG not set, please set OZ_CONFIG env variable" >&2 
+  exit 1
+fi
+
+TDL=/tmp/tdl.$$
+
+sed -e "s|%DISKSIZE%|$IMAGE_SIZE|g"  \
+    -e "s|%NAME%|$IMAGE_NAME|g" $DIR/centos7.0-minimal.tdl.template > $TDL
+
+oz-install -d3 -u $TDL -x $POOL_PATH/$IMAGE_NAME.xml -p -a $DIR/centos7.0-minimal.auto -c $OZ_CONFIG
+virt-sysprep -a $POOL_PATH/$IMAGE_NAME.qcow2
+
+rm $TDL

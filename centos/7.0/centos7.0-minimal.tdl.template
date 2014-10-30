@@ -1,5 +1,8 @@
-<template>
-  <name>symphony-monitor</name>
+<template version="1.0">
+  <name>%NAME%</name>
+  <disk>
+    <size>%DISKSIZE%</size>
+  </disk>
   <os>
     <name>CentOS-7</name>
     <version>0</version>
@@ -8,5 +11,5 @@
       <iso>http://mirror.ox.ac.uk/sites/mirror.centos.org/7.0.1406/isos/x86_64/CentOS-7.0-1406-x86_64-DVD.iso</iso>
     </install>
   </os>
-  <description>CentOS 7.0 Base Install for Alces Symphony Deployment - Monitor</description>
+  <description>CentOS 7.0 Base Install for Alces Symphony Deployment - Director</description>
 </template>

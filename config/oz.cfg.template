@@ -1,5 +1,5 @@
 [paths]
-output_dir = /opt/vm2
+output_dir = %POOL_PATH%
 data_dir = /var/lib/oz
 screenshot_dir = /var/lib/oz/screenshots
 # sshprivkey = /etc/oz/id_rsa-icicle-gen
@@ -8,9 +8,9 @@ screenshot_dir = /var/lib/oz/screenshots
 uri = qemu:///system
 image_type = qcow2
 # type = kvm
-bridge_name = dmz
-# cpus = 1
-# memory = 1024
+bridge_name = %EXT_BRIDGE%
+cpus = 2
+memory = 4096
 
 [cache]
 original_media = yes
