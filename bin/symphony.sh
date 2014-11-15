@@ -29,7 +29,7 @@ if [ -z $POOL_PATH ]; then
   . $DIR/../etc/vars
 fi
 
-
+export IMAGE_SIZE=32
 BASE_IMAGE=$POOL_PATH/centos7.0-symphonybase.xml
 #Create base image (if not exist)
 if ! [ -f $BASE_IMAGE ]; then 
