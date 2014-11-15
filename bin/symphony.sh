@@ -40,7 +40,7 @@ INTERNAL_BRIDGE='build.sfn'
 EXTERNAL_BRIDGE='dmz'
 
 #SYMPHONY-DIRECTOR
-virt-clone --original-xml=$BASE_IMAGE --name=symphony-directorv0.1 --file=$POOL_PATH/symphony-directorv0.1.qcow2 --force-copy=vda
-virt-clone --original-xml=$BASE_IMAGE --name=symphony-monitorv0.1 --file=$POOL_PATH/symphony-monitorv0.1.qcow2 --force-copy=vda
-virt-clone --original-xml=$BASE_IMAGE --name=symphony-repov0.1 --file=$POOL_PATH/symphony-repov0.1.qcow2 --force-copy=vda
+virt-clone --original-xml=$BASE_IMAGE --name=symphony-director-v1.0 --file=$POOL_PATH/symphony-director-v0.1.qcow2 --force-copy=vda
+virt-clone --original-xml=$BASE_IMAGE --name=symphony-monitor-v1.0 --file=$POOL_PATH/symphony-monitor-v0.1.qcow2 --force-copy=vda
+virt-clone --original-xml=$BASE_IMAGE --name=symphony-repo-v1.0 --file=$POOL_PATH/symphony-repo-v0.1.qcow2 --force-copy=vda
 
