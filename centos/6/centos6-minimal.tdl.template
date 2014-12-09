@@ -1,0 +1,15 @@
+<template>
+  <name>%NAME%</name>
+  <disk>
+    <size>%DISKSIZE%</size>
+  </disk>
+  <os>
+    <name>CentOS-6</name>
+    <version>6</version>
+    <arch>x86_64</arch>
+    <install type='iso'>
+      <iso>http://mirror.ox.ac.uk/sites/mirror.centos.org/6/isos/x86_64/CentOS-6.6-x86_64-bin-DVD1.iso</iso>
+    </install>
+  </os>
+  <description>CentOS 6 Base install with cloud pkgs</description>
+</template>
