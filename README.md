@@ -1,5 +1,4 @@
-oz templates
+oztemplates-openstack
 ============
 
-- Alces OZ Templates for building base virtual machine images
-
+- Alces OZ Templates for building Alces-Openstack ready images.
